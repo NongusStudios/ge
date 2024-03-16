@@ -1,0 +1,3 @@
+[submodule "external/g_app"]
+	path = external/g_app
+	url = https://github.com/NongusStudios/g_app.git
