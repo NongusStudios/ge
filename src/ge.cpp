@@ -9,7 +9,8 @@ namespace ge {
             .set_window_extent(desc.window_extent)
             .init()
         },
-        m_startup{desc.startup_systems}
+        m_startup{desc.startup_systems},
+        m_ent{*this}
     {}
 
     void Ge::run(){
@@ -17,7 +18,10 @@ namespace ge {
             system(*this);
         }
         m_app.main_loop([&](const std::vector<g_app::Event>& events, const g_app::Time& time){
-            m_ent.update(*this, time.delta);
+            for(const auto& event : events){
+                m_ent.input(event);
+            }
+            m_ent.update(time.delta);
         });
     }
 }

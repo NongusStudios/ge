@@ -31,4 +31,4 @@ add_library(ge
 add_executable(out src/main.cpp
         include/ge.hpp)
 
-target_link_libraries(out ge g_app glfw spdlog::spdlog ${VULKANSDK_LIB} imgui)
+target_link_libraries(out ge g_app glfw spdlog::spdlog vulkan imgui)

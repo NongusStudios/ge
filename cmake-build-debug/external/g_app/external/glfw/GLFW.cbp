@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="GLFW"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\external\;CMake Files\external\g_app\;CMake Files\external\g_app\external\;CMake Files\external\g_app\external\glfw\;CMake Files\external\g_app\external\glfw\CMake\;CMake Files\external\g_app\external\glfw\src\;CMake Files\external\g_app\external\spdlog\;CMake Files\external\g_app\external\spdlog\cmake\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/jeol/ge/cmake-build-debug/external/g_app/external/glfw"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/sbin/make -j8 -f &quot;/home/jeol/ge/cmake-build-debug/external/g_app/external/glfw/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/sbin/make -j8 -f &quot;/home/jeol/ge/cmake-build-debug/external/g_app/external/glfw/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/sbin/make -j8 -f &quot;/home/jeol/ge/cmake-build-debug/external/g_app/external/glfw/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/sbin/make -j8 -f &quot;/home/jeol/ge/cmake-build-debug/external/g_app/external/glfw/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="uninstall">
+				<Option working_dir="/home/jeol/ge/cmake-build-debug/external/g_app/external/glfw"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/sbin/make -j8 -f &quot;/home/jeol/ge/cmake-build-debug/external/g_app/external/glfw/Makefile&quot;  VERBOSE=1 uninstall"/>
+					<CompileFile command="/sbin/make -j8 -f &quot;/home/jeol/ge/cmake-build-debug/external/g_app/external/glfw/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/sbin/make -j8 -f &quot;/home/jeol/ge/cmake-build-debug/external/g_app/external/glfw/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/sbin/make -j8 -f &quot;/home/jeol/ge/cmake-build-debug/external/g_app/external/glfw/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="glfw">
+				<Option output="/home/jeol/ge/cmake-build-debug/external/g_app/external/glfw/src/libglfw3.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jeol/ge/cmake-build-debug/external/g_app/external/glfw/src"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-D_GLFW_X11"/>
+					<Add option="-D_DEFAULT_SOURCE"/>
+					<Add directory="/home/jeol/ge/external/g_app/include"/>
+					<Add directory="/home/jeol/ge/external/g_app/external/glfw/include"/>
+					<Add directory="/home/jeol/ge/external/g_app/external/vma/include"/>
+					<Add directory="/home/jeol/ge/external/g_app/external/spdlog/include"/>
+					<Add directory="/home/jeol/ge/external/g_app/external/imgui"/>
+					<Add directory="/home/jeol/ge/external/g_app/external/stb_image"/>
+					<Add directory="/home/jeol/ge/external/g_app/external/miniaudio"/>
+					<Add directory="/home/jeol/ge/include"/>
+					<Add directory="/home/jeol/ge/C:/VulkanSDK/1.3.275.0/Include"/>
+					<Add directory="/home/jeol/ge/external/g_app/external/glfw/src"/>
+					<Add directory="/home/jeol/ge/cmake-build-debug/external/g_app/external/glfw/src"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/sbin/make -j8 -f &quot;/home/jeol/ge/cmake-build-debug/external/g_app/external/glfw/src/Makefile&quot;  VERBOSE=1 glfw"/>
+					<CompileFile command="/sbin/make -j8 -f &quot;/home/jeol/ge/cmake-build-debug/external/g_app/external/glfw/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/sbin/make -j8 -f &quot;/home/jeol/ge/cmake-build-debug/external/g_app/external/glfw/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/sbin/make -j8 -f &quot;/home/jeol/ge/cmake-build-debug/external/g_app/external/glfw/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="glfw/fast">
+				<Option output="/home/jeol/ge/cmake-build-debug/external/g_app/external/glfw/src/libglfw3.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jeol/ge/cmake-build-debug/external/g_app/external/glfw/src"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-D_GLFW_X11"/>
+					<Add option="-D_DEFAULT_SOURCE"/>
+					<Add directory="/home/jeol/ge/external/g_app/include"/>
+					<Add directory="/home/jeol/ge/external/g_app/external/glfw/include"/>
+					<Add directory="/home/jeol/ge/external/g_app/external/vma/include"/>
+					<Add directory="/home/jeol/ge/external/g_app/external/spdlog/include"/>
+					<Add directory="/home/jeol/ge/external/g_app/external/imgui"/>
+					<Add directory="/home/jeol/ge/external/g_app/external/stb_image"/>
+					<Add directory="/home/jeol/ge/external/g_app/external/miniaudio"/>
+					<Add directory="/home/jeol/ge/include"/>
+					<Add directory="/home/jeol/ge/C:/VulkanSDK/1.3.275.0/Include"/>
+					<Add directory="/home/jeol/ge/external/g_app/external/glfw/src"/>
+					<Add directory="/home/jeol/ge/cmake-build-debug/external/g_app/external/glfw/src"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/../../../../include/c++/13.2.1/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/sbin/make -j8 -f &quot;/home/jeol/ge/cmake-build-debug/external/g_app/external/glfw/src/Makefile&quot;  VERBOSE=1 glfw/fast"/>
+					<CompileFile command="/sbin/make -j8 -f &quot;/home/jeol/ge/cmake-build-debug/external/g_app/external/glfw/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/sbin/make -j8 -f &quot;/home/jeol/ge/cmake-build-debug/external/g_app/external/glfw/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/sbin/make -j8 -f &quot;/home/jeol/ge/cmake-build-debug/external/g_app/external/glfw/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="update_mappings">
+				<Option working_dir="/home/jeol/ge/cmake-build-debug/external/g_app/external/glfw/src"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/sbin/make -j8 -f &quot;/home/jeol/ge/cmake-build-debug/external/g_app/external/glfw/src/Makefile&quot;  VERBOSE=1 update_mappings"/>
+					<CompileFile command="/sbin/make -j8 -f &quot;/home/jeol/ge/cmake-build-debug/external/g_app/external/glfw/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/sbin/make -j8 -f &quot;/home/jeol/ge/cmake-build-debug/external/g_app/external/glfw/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/sbin/make -j8 -f &quot;/home/jeol/ge/cmake-build-debug/external/g_app/external/glfw/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/jeol/ge/external/g_app/external/glfw/CMake/GenerateMappings.cmake">
+			<Option target="update_mappings"/>
+		</Unit>
+		<Unit filename="/home/jeol/ge/external/g_app/external/glfw/include/GLFW/glfw3.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/home/jeol/ge/external/g_app/external/glfw/include/GLFW/glfw3native.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/home/jeol/ge/external/g_app/external/glfw/src/context.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/home/jeol/ge/external/g_app/external/glfw/src/egl_context.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/home/jeol/ge/external/g_app/external/glfw/src/glx_context.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/home/jeol/ge/external/g_app/external/glfw/src/init.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/home/jeol/ge/external/g_app/external/glfw/src/input.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/home/jeol/ge/external/g_app/external/glfw/src/internal.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/home/jeol/ge/external/g_app/external/glfw/src/linux_joystick.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/home/jeol/ge/external/g_app/external/glfw/src/linux_joystick.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/home/jeol/ge/external/g_app/external/glfw/src/mappings.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/home/jeol/ge/external/g_app/external/glfw/src/mappings.h.in">
+			<Option target="update_mappings"/>
+		</Unit>
+		<Unit filename="/home/jeol/ge/external/g_app/external/glfw/src/monitor.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/home/jeol/ge/external/g_app/external/glfw/src/null_init.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/home/jeol/ge/external/g_app/external/glfw/src/null_joystick.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/home/jeol/ge/external/g_app/external/glfw/src/null_joystick.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/home/jeol/ge/external/g_app/external/glfw/src/null_monitor.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/home/jeol/ge/external/g_app/external/glfw/src/null_platform.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/home/jeol/ge/external/g_app/external/glfw/src/null_window.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/home/jeol/ge/external/g_app/external/glfw/src/osmesa_context.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/home/jeol/ge/external/g_app/external/glfw/src/platform.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/home/jeol/ge/external/g_app/external/glfw/src/platform.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/home/jeol/ge/external/g_app/external/glfw/src/posix_module.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/home/jeol/ge/external/g_app/external/glfw/src/posix_poll.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/home/jeol/ge/external/g_app/external/glfw/src/posix_poll.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/home/jeol/ge/external/g_app/external/glfw/src/posix_thread.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/home/jeol/ge/external/g_app/external/glfw/src/posix_thread.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/home/jeol/ge/external/g_app/external/glfw/src/posix_time.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/home/jeol/ge/external/g_app/external/glfw/src/posix_time.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/home/jeol/ge/external/g_app/external/glfw/src/vulkan.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/home/jeol/ge/external/g_app/external/glfw/src/window.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/home/jeol/ge/external/g_app/external/glfw/src/x11_init.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/home/jeol/ge/external/g_app/external/glfw/src/x11_monitor.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/home/jeol/ge/external/g_app/external/glfw/src/x11_platform.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/home/jeol/ge/external/g_app/external/glfw/src/x11_window.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/home/jeol/ge/external/g_app/external/glfw/src/xkb_unicode.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/home/jeol/ge/external/g_app/external/glfw/src/xkb_unicode.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/home/jeol/ge/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/jeol/ge/external/g_app/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\external\g_app\"/>
+		</Unit>
+		<Unit filename="/home/jeol/ge/external/g_app/external/glfw/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\external\g_app\external\glfw\"/>
+		</Unit>
+		<Unit filename="/home/jeol/ge/external/g_app/external/glfw/CMake/cmake_uninstall.cmake.in">
+			<Option virtualFolder="CMake Files\external\g_app\external\glfw\CMake\"/>
+		</Unit>
+		<Unit filename="/home/jeol/ge/external/g_app/external/glfw/CMake/glfw3.pc.in">
+			<Option virtualFolder="CMake Files\external\g_app\external\glfw\CMake\"/>
+		</Unit>
+		<Unit filename="/home/jeol/ge/external/g_app/external/glfw/CMake/glfw3Config.cmake.in">
+			<Option virtualFolder="CMake Files\external\g_app\external\glfw\CMake\"/>
+		</Unit>
+		<Unit filename="/home/jeol/ge/external/g_app/external/glfw/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\external\g_app\external\glfw\src\"/>
+		</Unit>
+		<Unit filename="/home/jeol/ge/external/g_app/external/spdlog/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\external\g_app\external\spdlog\"/>
+		</Unit>
+		<Unit filename="/home/jeol/ge/external/g_app/external/spdlog/cmake/ide.cmake">
+			<Option virtualFolder="CMake Files\external\g_app\external\spdlog\cmake\"/>
+		</Unit>
+		<Unit filename="/home/jeol/ge/external/g_app/external/spdlog/cmake/utils.cmake">
+			<Option virtualFolder="CMake Files\external\g_app\external\spdlog\cmake\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

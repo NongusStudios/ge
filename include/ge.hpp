@@ -19,6 +19,9 @@ namespace ge {
         explicit Ge(const GeDesc& desc);
 
         void run();
+        void quit(){
+            m_app.window().quit();
+        }
 
         ent::Ent& ent() { return m_ent; }
     private:
@@ -40,7 +43,7 @@ namespace ge {
         }
 
         Ge init(){
-            return Ge{m_desc};
+            return Ge(m_desc);
         }
     private:
         GeDesc m_desc = {};

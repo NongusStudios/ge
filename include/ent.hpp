@@ -9,6 +9,7 @@
 #include <typeindex>
 #include <typeinfo>
 #include <cassert>
+#include <g_app.hpp>
 
 namespace ge { class Ge; }
 
@@ -22,7 +23,14 @@ namespace ge::ent {
     public:
         Component() = default;
 
+        // Called on spawn
+        virtual void ready(Ge& ge, Entity entity){}
+
+        // Called for every frame
         virtual void update(Ge& ge, Entity entity, double delta){}
+
+        // Called for each input event
+        virtual void input(Ge& ge, Entity entity, const g_app::Event& event){}
 
         ComponentId id() const {
             return m_id;
@@ -35,6 +43,8 @@ namespace ge::ent {
 
     class Ent {
     public:
+        explicit Ent(Ge& ge): m_ge{ge} {}
+
         ~Ent(){
             for(auto& [type, component_array] : m_components) {
                 for (auto &[entity, component]: component_array) {
@@ -62,6 +72,8 @@ namespace ge::ent {
             ComponentId id = m_current_component_id++;
             m_components[typeid(T)][e]->m_id = id;
             m_entities[id] = e;
+
+            m_components[typeid(T)][e]->ready(m_ge, e);
         }
 
         template<typename T>
@@ -76,8 +88,10 @@ namespace ge::ent {
             return m_entities[c.id()];
         }
 
-        void update(Ge& ge, double delta);
+        void update(double delta);
+        void input(const g_app::Event& event);
     private:
+        Ge& m_ge;
         Entity m_current_entity_id = 1;
         ComponentId m_current_component_id = 1;
         std::unordered_map<std::type_index, // Component type

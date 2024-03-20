@@ -4,8 +4,23 @@
 
 class PrintDelta : public ge::ent::Component {
 public:
+    void ready(ge::Ge& ge, ge::ent::Entity entity) override {
+
+    }
+
     void update(ge::Ge& ge, ge::ent::Entity entity, double delta) override {
-        std::cout << entity << ": " << delta << "\n";
+
+    }
+
+    void input(ge::Ge& ge, ge::ent::Entity entity, const g_app::Event& event) override {
+        switch(event.type){
+            case g_app::EventType::KEY:
+                if(event.key.key == GLFW_KEY_ESCAPE && event.key.action == GLFW_PRESS){
+                    ge.quit();
+                }
+            default:
+                break;
+        }
     }
 };
 
@@ -18,9 +33,10 @@ void spawn_print_delta(ge::Ge& ge){
 }
 
 int main() {
-    auto ge = ge::GeInit()
-            .add_startup_system(spawn_print_delta)
-            .init();
+    auto ge =
+    ge::GeInit()
+        .add_startup_system(spawn_print_delta)
+        .init();
     ge.run();
 
     return 0;
