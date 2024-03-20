@@ -1,1 +1,0 @@
-/sbin/c++ -g CMakeFiles/out.dir/src/main.cpp.o -o out  libge.a external/g_app/libg_app.a external/g_app/external/glfw/src/libglfw3.a external/g_app/external/spdlog/libspdlogd.a -lvulkan external/g_app/libimgui.a /usr/lib/librt.a -lm -ldl 
