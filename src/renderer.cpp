@@ -6,15 +6,6 @@ namespace ge {
         
     }
 
-    RenderObjID Renderer::add_shape2d(const RenderShape2D& shape){
-        RenderObjID id = 0; 
-        if(!m_freeids.empty()){ id = m_freeids.front(); m_freeids.pop(); }
-        else { id = m_current_id++; }
-
-        m_shape2ds[id] = shape;
-        return id;
-    }
-
     void Renderer::draw(){
         if(!m_backend.acquire_next_swapchain_image()) return; 
 
@@ -24,10 +15,6 @@ namespace ge {
                                        m_clear_colour.g,
                                        m_clear_colour.b, 
                                        m_clear_colour.a)
-            .bind_pipeline(m_rect_pipeline, VK_PIPELINE_BIND_POINT_GRAPHICS)
-            .bind_vertex_buffer(m_rect_vbuf)
-            .bind_index_buffer(m_rect_ibuf, VK_INDEX_TYPE_UINT32)
-            .draw_indexed(6, 1)
             .end_render_pass()
             .submit(g_app::Queue::GRAPHICS, {
                 {m_backend.current_image_available_semaphore()},
@@ -38,6 +25,12 @@ namespace ge {
         m_backend.present();
     }
     void Renderer::init(){
+        for(uint32_t i = 0; i < g_app::VulkanRenderer::MAX_FRAMES_IN_FLIGHT; i++){
+            m_cmd[i] = g_app::CommandBuffer(m_backend);
+        }
+    }
+    
+    Shape2D_Data::Shape2D_Data(g_app::VulkanRenderer backend): RenderData(backend) {
         Vertex2D rect_vertices[] = {
             {{-1.0f, -1.0f}, {0.0f, 0.0f}}, // Top Left
             {{ 1.0f, -1.0f}, {1.0f, 0.0f}}, // Top Right
@@ -83,12 +76,10 @@ namespace ge {
             )
             .set_render_pass(m_backend.default_render_pass())
             .init(m_backend);
-            
-            
 
-        for(uint32_t i = 0; i < g_app::VulkanRenderer::MAX_FRAMES_IN_FLIGHT; i++){
-            m_cmd[i] = g_app::CommandBuffer(m_backend);
-        }
     }
+    
+    void draw(g_app::CommandBuffer cmd, std::vector<RenderObject*> objects){
 
+    }
 }
