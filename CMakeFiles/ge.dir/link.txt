@@ -1,2 +1,0 @@
-/sbin/ar qc libge.a CMakeFiles/ge.dir/src/ent.cpp.o CMakeFiles/ge.dir/src/ge.cpp.o
-/sbin/ranlib libge.a
