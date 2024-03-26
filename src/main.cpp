@@ -15,7 +15,7 @@ public:
     void input(ge::Ge& ge, ge::ent::Entity entity, const g_app::Event& event) override {
         switch(event.type){
             case g_app::EventType::KEY:
-                if(event.key.key == GLFW_KEY_ESCAPE && event.key.action == GLFW_PRESS){
+                if(event.key.key == g_app::Key::ESCAPE && event.key.action == g_app::Action::PRESS){
                     ge.quit();
                 }
             default:
@@ -33,10 +33,10 @@ void spawn_print_delta(ge::Ge& ge){
 }
 
 int main() {
-    auto ge =
-    ge::GeInit()
-        .add_startup_system(spawn_print_delta)
-        .init();
+    auto ge = ge::Ge({
+        {800, 600},
+    });
+    ge.add_startup_system(spawn_print_delta);
     ge.run();
 
     return 0;

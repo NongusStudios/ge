@@ -41,6 +41,11 @@ namespace ge::ent {
         friend class Ent;
     };
 
+    class Res {
+        private:
+            uint32_t id;
+    };
+
     class Ent {
     public:
         explicit Ent(Ge& ge): m_ge{ge} {}
@@ -50,6 +55,9 @@ namespace ge::ent {
                 for (auto &[entity, component]: component_array) {
                     delete component;
                 }
+            }
+            for(auto& [type, res] : m_resources){
+                delete res;
             }
         }
 
@@ -61,6 +69,12 @@ namespace ge::ent {
 
         Entity create_entity(){
             return m_current_entity_id++;
+        }
+        
+        template<typename T>
+        void add_resource(const T& res){
+            assert(!m_resources.contains(typeid(T)));
+            m_resources[typeid(T)] = new T(res);
         }
 
         template<typename T>
@@ -77,9 +91,15 @@ namespace ge::ent {
         }
 
         template<typename T>
-        Component& retrieve_component(Entity e){
+        T& retrieve_component(Entity e){
             assert(m_components.contains(typeid(T)));
             return *m_components[typeid(T)][e];
+        }
+        
+         template<typename T>
+         T& retrieve_resource(){
+            assert(m_resources.contains(typeid(T)));
+            return *m_resources[typeid(T)];
         }
 
         template<typename T>
@@ -98,5 +118,6 @@ namespace ge::ent {
             std::unordered_map<Entity, Component*> // Components mapped to entities
         > m_components;
         std::unordered_map<ComponentId, Entity> m_entities; // Entities mapped to ComponentIds
+        std::unordered_map<std::type_index, Res*> m_resources; 
     };
 }
