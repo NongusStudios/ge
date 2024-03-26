@@ -11,6 +11,8 @@
 #include <math/mat4.hpp>
 
 namespace ge {
+    class Renderer;
+
     struct Colour { float r, g, b, a; 
         Colour(): Colour(0, 0, 0, 255) {}
         Colour(uint8_t _r, uint8_t _g, uint8_t _b, uint8_t _a):
@@ -34,25 +36,32 @@ namespace ge {
     
     class RenderData {
     public:
-        RenderData(g_app::VulkanRenderer backend): m_backend{backend} {}
-        g_app::VulkanRenderer m_backend;
+        RenderData(Renderer& renderer): m_renderer{renderer} {}
+        Renderer& m_renderer;
     
-        virtual void draw(g_app::CommandBuffer cmd, std::vector<RenderObject*> objects){}
+        virtual void draw(g_app::CommandBuffer& cmd, std::vector<RenderObject*> objects){}
     };
 
     // Shape2D
     
-    class Shape2D_Data : public RenderData {
+    class RectData : public RenderData {
     public:
-        Shape2D_Data(g_app::VulkanRenderer backend);
+        struct PushConstant {
+            math::Mat4 view;
+        };
+
+        RectData(Renderer& backend);
         g_app::Buffer<Vertex2D> m_rect_vbuf;
         g_app::Buffer<uint32_t> m_rect_ibuf;
+        g_app::Buffer<math::Mat4> m_transform_sbuf;
+        g_app::Buffer<PushConstant> m_rect_ubuf;
+        g_app::DescriptorSet m_desc_set;
         g_app::Pipeline m_rect_pipeline;
-    
-        void draw(g_app::CommandBuffer cmd, std::vector<RenderObject*> objects) override;
+
+        void draw(g_app::CommandBuffer& cmd, std::vector<RenderObject*> objects) override;
     };
 
-    class Shape2D : public RenderObject {
+    class Rect : public RenderObject {
     public:
     };
     
@@ -73,7 +82,7 @@ namespace ge {
             template<typename T>
             void register_render_data(){
                 assert(!m_render_data.contains(typeid(T)));
-                m_render_data[typeid(T)] = {new T(m_backend), {}};
+                m_render_data[typeid(T)] = {new T(*this), {}};
             }
 
             template<typename T>
@@ -104,10 +113,14 @@ namespace ge {
             }
 
             void draw();
+
+            g_app::VulkanRenderer backend() { return m_backend; }
+            g_app::DescriptorPool desc_pool() { return m_desc_pool; }
         private:
             void init();
 
             g_app::VulkanRenderer m_backend;
+            g_app::DescriptorPool m_desc_pool;
             g_app::CommandBuffer m_cmd[g_app::VulkanRenderer::MAX_FRAMES_IN_FLIGHT]; 
 
             RenderObjID m_current_id = 1;
